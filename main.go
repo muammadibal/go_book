@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"net/http"
 
@@ -32,7 +31,7 @@ func bookHandler(ctx *gin.Context) {
 type BookInput struct {
 	Title       string      `json:"title" binding:"required"`
 	SubTitle    string      `json:"sub_title"`
-	Price       json.Number `json:"price" binding:"required,numeric"`
+	Price       interface{} `json:"price" binding:"required,numeric"`
 	Description string
 }
 
